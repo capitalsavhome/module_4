@@ -1,0 +1,45 @@
+CREATE TABLE public.products
+(
+	product_id SERIAL NOT NULL PRIMARY KEY,
+	product_name varchar(255)
+)
+WITH (
+  OIDS = FALSE
+)
+;
+ALTER TABLE public.products
+  OWNER TO db_admin;
+
+
+========================================================================================================================
+
+Role name: my_admin
+pwd: sudo12345
+
+CREATE DATABASE db_files
+  WITH ENCODING='UTF8'
+       OWNER=my_admin
+       CONNECTION LIMIT=-1;
+
+
+CREATE TABLE public.file_names
+(
+	file_id SERIAL NOT NULL PRIMARY KEY,
+	file_name varchar(255),
+	file_server_name varchar(255)
+)
+WITH (
+  OIDS = FALSE
+)
+;
+ALTER TABLE public.file_names
+  OWNER TO my_admin;
+
+
+ALTER TABLE file_names RENAME COLUMN file_server_name TO file_server_path;
+
+SELECT file_id, file_name, file_server_name
+  FROM public.file_names WHERE file_id >= 10 ORDER BY file_id ASC LIMIT 10 ;
+
+SELECT file_id, file_name, file_server_name
+FROM public.file_names WHERE file_id >= (SELECT file_id FROM file_names ORDER BY file_id LIMIT 1) + 2 ORDER BY file_id ASC LIMIT 10 ;

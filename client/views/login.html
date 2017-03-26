@@ -1,0 +1,80 @@
+<div class="row absoluteHeight" id="mainRowLogin">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-12 col-lg-offset-0 absoluteHeight" id="mainColLogin">
+        <div class="row" id="buttonsLoginRow" ng-show="$ctrl.showSingIn()">
+            <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 absoluteHeight">
+                <div class="row absoluteHeight">
+                    <div class="col-xs-6 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0 col-lg-6 col-lg-offset-0 absoluteHeight">
+                        <button class="absoluteHeight" id="btnLogin" data-toggle="modal" data-target="#myModalLogin">SING IN</button>
+                    </div>
+                    <div class="col-xs-6 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0 col-lg-6 col-lg-offset-0 absoluteHeight">
+                        <button class="absoluteHeight" id="btnRegister" data-toggle="modal" data-target="#myModalRegister">SING UP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="buttonsLogOut" ng-show="$ctrl.showSingOut()">
+            <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 absoluteHeight">
+                <div class="row absoluteHeight">
+                    <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 absoluteHeight">
+                        <button class="absoluteHeight" id="btnLogOut" ng-click="$ctrl.singOut()">SING OUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="rowResponseLogin">
+            <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 absoluteHeight">
+                <div class="row absoluteHeight">
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 absoluteHeight" id="colContainerLoginResponse">
+                        <p>{{$ctrl.getLoginResponse()}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModalLogin" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="($ctrl.hideProgressBar())">&times;</button>
+                <h4 class="modal-title">Sing In</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-2 col-xs-offset-4 col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4 col-lg-2 col-lg-offset-4">
+                        <input type="text" placeholder="Email" ng-model="$ctrl.userEmailSingIn">
+                        <input type="password" placeholder="Password" ng-model="$ctrl.userPasswordSingIn">
+                        <input type="submit" ng-click="$ctrl.loginUser()" data-dismiss="modal">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="($ctrl.hideProgressBar())">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModalRegister" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="($ctrl.hideProgressBar())">&times;</button>
+                <h4 class="modal-title">Sing UP</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-2 col-xs-offset-4 col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4 col-lg-2 col-lg-offset-4">
+                        <input type="text" placeholder="Email" ng-model="$ctrl.userEmailSingUp">
+                        <input type="password" placeholder="Password" ng-model="$ctrl.userPasswordSingUp">
+                        <input type="submit" ng-click="$ctrl.singUpUser()" data-dismiss="modal">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="($ctrl.hideProgressBar())">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

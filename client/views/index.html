@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Products</title>
+        <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/stylesheets/style.css"/>
+        <script src="/angular/angular.js"></script>
+        <script src="/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+        <script src="/ng-file-upload/dist/ng-file-upload.js"></script>
+        <script src="/ng-file-upload/dist/ng-file-upload-all.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+        <script src="/javascripts/script.js"></script>
+        <link rel="icon" type="image/x-icon" href="/favicon.png">
+        <base href="/home">
+
+    </head>
+    <body ng-app="productsApp">
+        <!--div.container-fluid(ng-controller="ProductListController" data-ng-init="readProducts()")-->
+        <div class="container-fluid">
+            <div class="row" id="mainRow">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-12 col-lg-offset-0 absoluteHeight" id="mainCol">
+                    <div class="row" id="rowMainHeader">
+                        <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-12 col-lg-offset-0 absoluteHeight">
+                            <div class="row absoluteHeight" ng-controller="headMenuController">
+                                <div class="col-xs-1 col-xs-offset-8 col-sm-1 col-sm-offset-8 col-md-1 col-md-offset-8 col-lg-1 col-lg-offset-8 absoluteHeight">
+                                    <p class="pMenuLink" ng-show="isMenuShow()">
+                                        <span class="spanMenuLink" ui-sref="login">Login</span>
+                                    </p>
+                                </div>
+                                <div class="col-xs-1 col-xs-offset-0 col-sm-1 col-sm-offset-0 col-md-1 col-md-offset-0 col-lg-1 col-lg-offset-0 absoluteHeight">
+                                    <p class="pMenuLink" ng-show="isMenuShow()">
+                                        <span class="spanMenuLink" ui-sref="uploads">Uploads</span>
+                                    </p>
+                                </div>
+                                <div class="col-xs-1 col-xs-offset-0 col-sm-1 col-sm-offset-0 col-md-1 col-md-offset-0 col-lg-1 col-lg-offset-0 absoluteHeight">
+                                    <p class="pMenuLink" ng-show="isMenuShow()">
+                                        <span class="spanMenuLink" ui-sref="tests">MultView</span>
+                                    </p>
+                                </div>
+                                <div class="col-xs-1 col-xs-offset-0 col-sm-1 col-sm-offset-0 col-md-1 col-md-offset-0 col-lg-1 col-lg-offset-0 absoluteHeight">
+                                    <p class="pMenuLink" ng-show="isMenuShow()">
+                                        <span class="spanMenuLink">Empty</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ui-view></ui-view>
+                    <div ui-view="testsTop" class=""></div>
+                    <div ui-view="testMiddle" class=""></div>
+                    <div ui-view="testBottom" class=""></div>
+                </div>
+            </div>
+        </div>
+        <script src="/reload/bin/reload"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+    <!--<head>-->
+        <!--<title>My Products</title>-->
+        <!--<link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.css"/>-->
+        <!--<link rel="stylesheet" href="/stylesheets/style.css"/>-->
+        <!--<script src="/angular/angular.js"></script>-->
+        <!--<script src="/angular-ui-router/release/angular-ui-router.js"></script>-->
+        <!--<script src="/ng-file-upload/dist/ng-file-upload-shim.js"></script>-->
+        <!--<script src="/ng-file-upload/dist/ng-file-upload.js"></script>-->
+        <!--<script src="/ng-file-upload/dist/ng-file-upload-all.js"></script>-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+        <!--<script src="/bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
+        <!--<script src="/javascripts/script.js"></script>-->
+
+    <!--</head>-->
+    <!--<body ng-app="productsApp">-->
+        <!--&lt;!&ndash;div.container-fluid(ng-controller="ProductListController" data-ng-init="readProducts()")&ndash;&gt;-->
+        <!--<div class="container-fluid">-->
+            <!--<div class="row" id="mainRow">-->
+                <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 absoluteHeight" id="mainCol">-->
+                    <!--<div class="row" id="headerRow">-->
+                        <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 absoluteHeight colHeaderMenuLink" ui-sref="home">-->
+                            <!--<p class="pMenuLink">-->
+                                <!--Home-->
+                            <!--</p>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 absoluteHeight colHeaderMenuLink" ui-sref="uploads">-->
+                            <!--<p class="pMenuLink">-->
+                                <!--Uploads-->
+                            <!--</p>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 absoluteHeight colHeaderMenuLink" ui-sref="tests">-->
+                            <!--<p class="pMenuLink">-->
+                                <!--Tests-->
+                            <!--</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<ui-view id="uiViewId"></ui-view>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+                            <!--<p id="pEND">END OF UI-VIEW</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div ui-view="testsTop" class="multipleNamedViews"></div>-->
+                    <!--<div ui-view="testMiddle" class="multipleNamedViews"></div>-->
+                    <!--<div ui-view="testBottom" class="multipleNamedViews"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</body>-->
+<!--</html>-->

@@ -1,0 +1,7 @@
+1. Clone repository.
+2. Run npm install.
+3. Run_______:      npm install angular@1.6.2
+4. Run_______:      npm install ng-file-uplo
+
+ad
+                                                  5. Run_______:      sudo npm install supervisor -g
