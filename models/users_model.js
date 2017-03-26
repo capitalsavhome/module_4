@@ -37,6 +37,8 @@ Users.sync().then(function() {
 });
 
 let loginUser = function (userEmail, userPassword) {
+    console.log(userEmail + "=====");
+    console.log(userPassword + "=====");
     return Users.findOne({
         where: {
             user_email: userEmail,
@@ -44,6 +46,7 @@ let loginUser = function (userEmail, userPassword) {
         }
     }).then(function (response) {
         if (response === null) {
+            console.log("Error");
             let functionResponse = {
                 "status_code" : NOT_ACCEPTABLE,
                 "response_Text" : "Wrong email or password"
@@ -51,6 +54,7 @@ let loginUser = function (userEmail, userPassword) {
             return JSON.stringify(functionResponse);
         }
         else {
+            console.log("OK");
             let functionResponse = {
                 "status_code" : OK,
                 "response_Text" : "Confirmed login"

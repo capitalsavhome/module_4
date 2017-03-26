@@ -58,7 +58,7 @@ router.delete('/api/uploads/:file_id', (req, res, next) => {
 });
 
 router.post('/api/users',  function (req, res, next) {
-    let responseFromModel = modelUsers.loginUser(req.body.login, req.body.passwoxrd);
+    let responseFromModel = modelUsers.loginUser(req.body.login, req.body.password);
     responseFromModel.then(function (result) {
         res.status(JSON.parse(result).status_code).send(JSON.parse(result).response_Text);
     });
